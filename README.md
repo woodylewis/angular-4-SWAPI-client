@@ -1,28 +1,24 @@
-# ApiClient
+### Star Wars Code Challenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
+# Hit the play button in the Plunk window, or the Run button once in Edit mode.
 
-## Development server
+# Component pattern:
+App component contains two children: control and display.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Control
+Uses Display Service, Error Service and ErrorNameService
+DisplayService uses a display object as a Subject
+Actor names are read from the config json file into an array
+Array indices map to an image URL array read in from config file
+Images are in an S3 bucket under https to prevent warnings in console
+User click on button triggers getFilms function, which includes calls to Api Service to retrieve and Display Service to show data
+Api Service uses Observables in calls to DataService to retrieve films and film data
+Api Service uses forkJoin to make parallel requests for all film data
+First retrieval of actor data caches object in actorMap to avoid repeat calls to the api gateway
 
-## Code scaffolding
+# Display
+Creates Subscription to Display Service stream
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Notes:
+Used full pathnames for templateUrls
+Repeated out of memory crashes in Plunkr are a fact of life
