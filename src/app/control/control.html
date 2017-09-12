@@ -1,0 +1,10 @@
+<div class="btn-toolbar" role="toolbar">
+<div class="d-flex flex-row btn-group mr-2" role="group">
+  <div class="p-2" *ngFor="let a of actors">
+    <button type="button" class="btn btn-secondary rounded actor-button" 
+      (click)="getFilms(a.id)"> 
+      <img src="{{ actorImageUrls[a.id] }}" width="50" height="50"> 
+    </button>
+  </div>
+</div>
+</div>

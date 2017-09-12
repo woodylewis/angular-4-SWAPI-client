@@ -1,0 +1,17 @@
+<div class="align-self-center">
+  <div *ngIf="showActor">
+    <div class="d-flex flex-column">
+      <div class="alert alert-danger p-2" role="alert" *ngIf="hasError">
+        <strong>SOUND THE ALARM! </strong><p></p>{{ errorName }} IS MISSING!
+      </div>
+      <div class="p-2 bg-primary text-white">
+        {{ currentActor.name }}
+      </div>
+      <div class="p-2" *ngFor="let film of currentActor.films">
+        {{ film.title }}<br/>
+        Director: {{ film.director }}<br/>
+        Release Date: {{ film.release_date | date:'fullDate' }}<br/>
+      </div>
+    </div>
+  </div>
+</div>
