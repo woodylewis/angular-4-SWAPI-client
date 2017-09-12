@@ -1,7 +1,3 @@
-### Star Wars Code Challenge
-
-# Hit the play button in the Plunk window, or the Run button once in Edit mode.
-
 # Component pattern:
 App component contains two children: control and display.
 
@@ -18,7 +14,3 @@ First retrieval of actor data caches object in actorMap to avoid repeat calls to
 
 # Display
 Creates Subscription to Display Service stream
-
-# Notes:
-Used full pathnames for templateUrls
-Repeated out of memory crashes in Plunkr are a fact of life
